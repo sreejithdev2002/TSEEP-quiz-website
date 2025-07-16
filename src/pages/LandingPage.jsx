@@ -1,10 +1,10 @@
-
-
 import { useState } from "react";
 import Header from "../components/Header";
+import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
   const [isChecked, setIsChecked] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -45,9 +45,10 @@ function LandingPage() {
 
         <button
           disabled={!isChecked}
+          onClick={() => navigate("/login")}
           className={`mt-6 px-8 py-2 text-xs font-semibold rounded-sm transition-all duration-300 ${
             isChecked
-              ? "bg-[#2A586F] text-white hover:bg-blue-700"
+              ? "bg-[#2A586F] text-white hover:bg-[#1c4457] cursor-pointer"
               : "bg-gray-300 text-gray-600 cursor-not-allowed"
           }`}
         >
