@@ -19,9 +19,11 @@ function Login() {
     if (user) {
       alert("Login successful!");
       localStorage.setItem("loggedInUser", JSON.stringify(user));
-      navigate("/");
+      localStorage.setItem("userAuth", true);
+      navigate("/quiz");
     } else {
       alert("Invalid credentials. Please try again.");
+      localStorage.setItem("userAuth", false);
     }
   };
 

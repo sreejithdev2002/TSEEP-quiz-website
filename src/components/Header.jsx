@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import brandLogo from "../assets/brandLogo.png";
+import avatarImage from "../assets/avatarImage.jpg";
 
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -10,9 +11,10 @@ function Header() {
   }, []);
   return (
     <div className="flex justify-between items-center px-5">
-      <img src={brandLogo} alt="" className="h-30 w-auto" />
+      <img src={brandLogo} alt="" className="h-25 w-auto" />
       {isLoggedIn && (
-        <span className="bg-orange-400 p-2 h-10 w-10 rounded-full" />
+        <img loading="lazy" src={avatarImage} className="h-12 w-12 rounded-full" />
+
       )}
     </div>
   );
