@@ -37,7 +37,7 @@ function Login() {
         </h2>
 
         <div className="my-3 shadow-lg rounded-md p-6 w-full max-w-md">
-          <form onSubmit={handleLogin} className="space-y-5">
+          <form onSubmit={handleLogin} className="space-y-3 lg:space-y-5">
             <div className="flex flex-col gap-y-1">
               <label className="font-semibold">Mobile Number</label>
               <div className="flex gap-x-2">

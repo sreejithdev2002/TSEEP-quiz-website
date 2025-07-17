@@ -52,13 +52,13 @@ function Register() {
     <div>
       <Header />
       <div className="flex flex-col justify-center items-center min-h-[70vh]">
-        <h2 className="text-4xl font-semibold text-[#2A586F] mb-5 relative inline-block">
+        <h2 className="text-4xl font-semibold text-[#2A586F] lg:mb-5 relative inline-block">
           Register
           <span className="absolute left-0 top-[35px] w-full h-[6px] bg-[#fac167] -z-10"></span>
         </h2>
 
         <div className="my-3 shadow-lg rounded-md p-6 w-full max-w-md">
-          <form onSubmit={handleRegister} className="space-y-5">
+          <form onSubmit={handleRegister} className="space-y-3 lg:space-y-5">
             <div className="flex flex-col gap-y-1">
               <label className="font-semibold">Full Name</label>
               <input

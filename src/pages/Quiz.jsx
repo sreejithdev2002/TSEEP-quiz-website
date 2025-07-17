@@ -124,21 +124,21 @@ function Quiz() {
     return (
       <div>
         <Header />
-        <div className="flex flex-col items-center w-full justify-center text-center mt-20">
+        <div className="flex flex-col items-center w-full justify-center text-center mt-0 lg:mt-20">
           <img src={CheckImage} alt="" className="w-15" />
           <h2 className="text-2xl">
             Congratulations you have Succesfully Completed The Test
           </h2>
-          <p className="text-xl mt-5 font-semibold">
+          <p className="text-lg lg:text-xl mt-2 lg:mt-5 font-semibold">
             Score :{" "}
             <span className="bg-[#FAC167] py-1 px-5 rounded-4xl">
               {calculateScore()} / 50
             </span>
           </p>
-          <h3 className="bg-[#2A586F] py-2 px-5 text-2xl text-white font-semibold rounded-md my-5">
+          <h3 className="bg-[#2A586F] py-2 px-5 text-xl lg:text-2xl text-white font-semibold rounded-md my-2 lg:my-5">
             Your ID : 123456
           </h3>
-          <div className="w-1/2 rounded-md shadow-md text-start py-2 px-5">
+          <div className="w-3/4 lg:w-1/2 rounded-md shadow-md text-start py-2 px-5">
             <h2 className="font-bold my-2">Feedback</h2>
             <hr className="text-gray-200" />
             <h3 className="font-semibold text-xl mt-2">Give us a feedback!</h3>
@@ -146,12 +146,12 @@ function Quiz() {
               Your input is important for us. We take customer feedback very
               seriously.
             </p>
-            <div className="flex items-center space-x-2 text-xl my-5">
-              <span className="p-2 bg-gray-300 rounded-full">🥵</span>
-              <span className="p-2 bg-gray-300 rounded-full">😔</span>
-              <span className="p-2 bg-gray-300 rounded-full">😑</span>
-              <span className="p-2 bg-gray-300 rounded-full">😌</span>
-              <span className="p-2 bg-gray-300 rounded-full">🥰</span>
+            <div className="flex items-center space-x-2 lg:text-xl my-5 grayscale-100">
+              <span className="p-2 bg-gray-300 rounded-full cursor-pointer">🥵</span>
+              <span className="p-2 bg-gray-300 rounded-full cursor-pointer">😔</span>
+              <span className="p-2 bg-gray-300 rounded-full cursor-pointer">😑</span>
+              <span className="p-2 bg-gray-300 rounded-full cursor-pointer">😌</span>
+              <span className="p-2 bg-gray-300 rounded-full cursor-pointer">🥰</span>
             </div>
             <textarea
               name=""
@@ -263,7 +263,7 @@ function Quiz() {
               {question.options.map((option, index) => (
                 <label
                   key={index}
-                  className={`flex w-1/3 items-center gap-x-2 border border-gray-200 px-4 py-2 text-base rounded-md cursor-pointer
+                  className={`flex w-1/2 lg:w-1/3 items-center gap-x-2 border border-gray-200 px-4 py-2 text-base rounded-md cursor-pointer
                     ${
                       selected[currentQn] === option
                         ? "bg-[#E7FFD9] border-green-500"

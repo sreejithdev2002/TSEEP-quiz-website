@@ -9,11 +9,11 @@ function LandingPage() {
   return (
     <div>
       <Header />
-      <div className="flex flex-col items-center justify-center min-h-[70vh] -mt-16 px-4">
+      <div className="flex flex-col items-center justify-center min-h-[80vh] lg:min-h-[70vh] -mt-20 lg:-mt-16 px-4">
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold relative text-center leading-tight">
           Welcome to{" "}
           <span className="relative inline-block">
-            <span className="absolute inset-x-0 bottom-1 h-4 bg-[#fac167] -z-10"></span>
+            <span className="absolute inset-x-0 bottom-2 lg:bottom-1 h-3 lg:h-4 bg-[#fac167] -z-10"></span>
             TSEEP Mastery Box
           </span>
         </h1>
@@ -23,9 +23,9 @@ function LandingPage() {
         </h3>
       </div>
 
-      <hr className="w-[90%] mx-auto border-gray-300 my-8" />
+      <hr className="w-[90%] mx-auto border-gray-300 my-2 lg:my-8" />
 
-      <div className="flex items-center justify-between px-30 pb-12">
+      <div className="flex items-center justify-between px-10 lg:px-30 lg:pb-12">
         <div className="flex items-start gap-3 max-w-lg">
           <input
             type="checkbox"
