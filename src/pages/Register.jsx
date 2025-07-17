@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 
 function Register() {
@@ -11,6 +11,8 @@ function Register() {
     currentStatus: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,6 +37,8 @@ function Register() {
     const existingUsers = JSON.parse(localStorage.getItem("Users")) || [];
     existingUsers.push(userformData);
     localStorage.setItem("Users", JSON.stringify(existingUsers));
+
+    navigate("/login");
 
     console.log("Form submitted:", userformData);
 
