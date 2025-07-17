@@ -147,11 +147,21 @@ function Quiz() {
               seriously.
             </p>
             <div className="flex items-center space-x-2 lg:text-xl my-5 grayscale-100">
-              <span className="p-2 bg-gray-300 rounded-full cursor-pointer">🥵</span>
-              <span className="p-2 bg-gray-300 rounded-full cursor-pointer">😔</span>
-              <span className="p-2 bg-gray-300 rounded-full cursor-pointer">😑</span>
-              <span className="p-2 bg-gray-300 rounded-full cursor-pointer">😌</span>
-              <span className="p-2 bg-gray-300 rounded-full cursor-pointer">🥰</span>
+              <span className="p-2 bg-gray-300 rounded-full cursor-pointer">
+                🥵
+              </span>
+              <span className="p-2 bg-gray-300 rounded-full cursor-pointer">
+                😔
+              </span>
+              <span className="p-2 bg-gray-300 rounded-full cursor-pointer">
+                😑
+              </span>
+              <span className="p-2 bg-gray-300 rounded-full cursor-pointer">
+                😌
+              </span>
+              <span className="p-2 bg-gray-300 rounded-full cursor-pointer">
+                🥰
+              </span>
             </div>
             <textarea
               name=""
