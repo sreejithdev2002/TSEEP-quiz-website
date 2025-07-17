@@ -1,7 +1,30 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 
 function Login() {
+  const navigate = useNavigate();
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const users = JSON.parse(localStorage.getItem("Users")) || [];
+
+    const user = users.find(
+      (u) => u.mobile === "+91" + phone && u.password === password
+    );
+
+    if (user) {
+      alert("Login successful!");
+      localStorage.setItem("loggedInUser", JSON.stringify(user));
+      navigate("/");
+    } else {
+      alert("Invalid credentials. Please try again.");
+    }
+  };
+
   return (
     <div>
       <Header />
@@ -10,45 +33,48 @@ function Login() {
           Login
           <span className="absolute left-0 top-[35px] w-full h-[6px] bg-[#fac167] -z-10"></span>
         </h2>
-        <div className="my-3 shadow-lg rounded-md p-4">
-          <form action="" className="space-y-5">
+
+        <div className="my-3 shadow-lg rounded-md p-6 w-full max-w-md">
+          <form onSubmit={handleLogin} className="space-y-5">
             <div className="flex flex-col gap-y-1">
-              <label htmlFor="" className="font-semibold">
-                Mobile Number
-              </label>
+              <label className="font-semibold">Mobile Number</label>
               <div className="flex gap-x-2">
                 <input
                   type="text"
                   value="+91"
-                  className="border border-gray-200 p-2 rounded-sm w-1/5 text-sm"
+                  readOnly
+                  className="border border-gray-200 p-2 rounded-sm w-1/5 text-sm bg-gray-100"
                 />
                 <input
                   type="text"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   className="border border-gray-200 p-2 rounded-sm w-4/5 text-sm"
                   placeholder="Enter your phone number"
                 />
               </div>
             </div>
+
             <div className="flex flex-col gap-y-1">
-              <label htmlFor="" className="font-semibold">
-                Password
-              </label>
+              <label className="font-semibold">Password</label>
               <input
                 type="password"
-                name=""
-                id=""
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="border border-gray-200 p-2 rounded-sm text-sm"
                 placeholder="Enter Password"
               />
             </div>
+
             <button
               type="submit"
               className="my-3 bg-[#2A586F] rounded-md text-white w-full p-2"
             >
               Login
             </button>
+
             <p className="text-[#1E232C] my-1 text-sm text-center">
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <Link className="text-[#006EEC]" to="/register">
                 Register Now
               </Link>

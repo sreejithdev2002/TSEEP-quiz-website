@@ -9,8 +9,6 @@ function LandingPage() {
   return (
     <div>
       <Header />
-
-      {/* Hero Section */}
       <div className="flex flex-col items-center justify-center min-h-[70vh] -mt-16 px-4">
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold relative text-center leading-tight">
           Welcome to{" "}
@@ -27,7 +25,6 @@ function LandingPage() {
 
       <hr className="w-[90%] mx-auto border-gray-300 my-8" />
 
-      {/* Terms and Get Started */}
       <div className="flex items-center justify-between px-30 pb-12">
         <div className="flex items-start gap-3 max-w-lg">
           <input
